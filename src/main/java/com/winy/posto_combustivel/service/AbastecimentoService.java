@@ -10,15 +10,17 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
+// Serviço de abatecimento.
+
 @Service
 @RequiredArgsConstructor
 public class AbastecimentoService {
 
     private final AbastecimentoRepository abastecimentoRepository;
-    private final BombaDeCombustivelService bombaDeCombustivelService;
+    private final BombasDeCombustivelService bombasDeCombustivelService;
 
     public void abastecer(Integer idBomba, Long litros) {
-        BombasDeCombustivel bomba = bombaDeCombustivelService.buscarBombaDeCombustivelPorId(idBomba);
+        BombasDeCombustivel bomba = bombasDeCombustivelService.buscarBombaDeCombustivelPorId(idBomba);
         BigDecimal valorTotal = bomba.getTiposDeCombustivel().getPrecoPorLitro()
                 .multiply(BigDecimal.valueOf(litros));
 

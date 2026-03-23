@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-// Criando serviço de abastecimento
+// Serviço de bomba de combustível.
 
 @Service
 @RequiredArgsConstructor
-public class BombaDeCombustivelService {
+public class BombasDeCombustivelService {
 
     private final BombasDeCombustivelRepository bombasDeCombustivelRepository;
 
